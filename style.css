@@ -1,0 +1,490 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    background: #fff9ed;
+    font-family: 'DM Sans', sans-serif;
+    color: #5d513f;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* -------------------------
+   DECORACIÓN
+------------------------- */
+
+.decoracion {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+.flor,
+.comida {
+    position: absolute;
+    font-size: 45px;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+
+.flor1 {
+    top: 8%;
+    left: 8%;
+}
+
+.flor2 {
+    top: 18%;
+    right: 9%;
+    animation-delay: .7s;
+}
+
+.flor3 {
+    bottom: 12%;
+    left: 10%;
+    animation-delay: 1.2s;
+}
+
+.flor4 {
+    bottom: 20%;
+    right: 8%;
+    animation-delay: .4s;
+}
+
+.flor5 {
+    top: 45%;
+    left: 3%;
+    font-size: 35px;
+    animation-delay: 1.5s;
+}
+
+.flor6 {
+    top: 50%;
+    right: 3%;
+    font-size: 35px;
+    animation-delay: .9s;
+}
+
+
+.comida {
+    font-size: 32px;
+}
+
+.comida1 {
+    top: 30%;
+    left: 13%;
+    animation-delay: 1s;
+}
+
+.comida2 {
+    bottom: 32%;
+    right: 14%;
+    animation-delay: 1.8s;
+}
+
+.comida3 {
+    top: 65%;
+    left: 17%;
+    animation-delay: .5s;
+}
+
+.comida4 {
+    top: 25%;
+    right: 17%;
+    animation-delay: 1.4s;
+}
+
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(4deg);
+    }
+}
+
+
+/* -------------------------
+   PANTALLAS
+------------------------- */
+
+.pantalla {
+    display: none;
+
+    width: 100%;
+    min-height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.pantalla.activa {
+    display: flex;
+
+    animation: aparecer .6s ease;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* -------------------------
+   TARJETA
+------------------------- */
+
+.tarjeta {
+
+    width: min(520px, 92vw);
+
+    background: rgba(255, 255, 255, .92);
+
+    padding: 45px 40px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(116, 91, 44, .13);
+
+    border: 1px solid rgba(218, 185, 111, .3);
+
+}
+
+
+.mini-flores {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+
+.pequeno {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #b18a39;
+    margin-bottom: 18px;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: #5c4a2d;
+}
+
+
+h1 {
+    font-size: clamp(38px, 7vw, 55px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+
+h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+
+.descripcion {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #766b59;
+    margin-bottom: 25px;
+}
+
+
+.nota {
+    font-size: 11px;
+    color: #a69a87;
+    font-style: italic;
+    margin-top: 18px;
+    line-height: 1.5;
+}
+
+
+/* -------------------------
+   BOTONES
+------------------------- */
+
+button {
+
+    border: none;
+
+    background: #d8a928;
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    box-shadow: 0 8px 20px rgba(190, 145, 35, .2);
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+    background: #c5961d;
+}
+
+
+button:active {
+    transform: scale(.96);
+}
+
+
+/* -------------------------
+   ESTADÍSTICAS
+------------------------- */
+
+.estadisticas {
+    text-align: left;
+    margin: 25px 0;
+}
+
+
+.dato {
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 16px 0;
+}
+
+
+.dato > span {
+    font-size: 25px;
+    width: 35px;
+}
+
+
+.dato > div {
+    flex: 1;
+}
+
+
+.dato strong {
+    font-size: 13px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.barra {
+    height: 9px;
+    background: #f1eadb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.barra div {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #e5c04a,
+        #d9a82d
+    );
+
+    border-radius: 20px;
+}
+
+
+.dato small {
+    font-size: 10px;
+    color: #a69a87;
+}
+
+
+/* -------------------------
+   VEREDICTO
+------------------------- */
+
+.veredicto {
+
+    background: #fff9e9;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin: 25px 0;
+
+    border: 1px dashed #dfc47b;
+}
+
+
+.veredicto p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+.veredicto span {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #b18a39;
+    font-weight: 700;
+}
+
+
+.veredicto h3 {
+
+    font-size: 28px;
+
+    margin: 10px 0 15px;
+
+    color: #d09d20;
+}
+
+
+/* -------------------------
+   FINAL
+------------------------- */
+
+.final h1 {
+    color: #d09d20;
+}
+
+
+.confeti {
+    font-size: 25px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+
+.mensaje {
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #706653;
+
+    margin: 20px 0 25px;
+}
+
+
+.firma {
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    color: #9a814a;
+
+    margin-bottom: 25px;
+}
+
+
+.sorpresa {
+
+    margin-top: 20px;
+
+    font-weight: 700;
+
+    color: #c18f1b;
+
+    min-height: 20px;
+
+}
+
+
+/* -------------------------
+   RESPONSIVE PARA IPHONE
+------------------------- */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .pantalla {
+        padding: 20px;
+    }
+
+    .tarjeta {
+        padding: 35px 25px;
+    }
+
+    .flor,
+    .comida {
+        opacity: .65;
+    }
+
+    .flor1 {
+        left: 2%;
+    }
+
+    .flor2 {
+        right: 2%;
+    }
+
+    .comida1 {
+        left: 4%;
+    }
+
+    .comida2 {
+        right: 4%;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+}
